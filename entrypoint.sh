@@ -76,14 +76,14 @@ EOF
 
 	if [ $ETHERPAD_PLUGINS ]; then
 		for plugin in $(echo "${ETHERPAD_PLUGINS//,/
-}"); do
+	}"); do
 			[ -d node_modules/$plugin ] || npm install $plugin
-
+	
 			VARNAME=$(echo $plugin | tr '[[:lower:]]' '[[:upper:]]')
 			VARNAME="${VARNAME}_CONFIG"
-
+	
 			eval plugin_config=\$$VARNAME
-
+	
 			if [ $plugin_config ]; then
 				echo "  $plugin_config," >> settings.json
 			fi
