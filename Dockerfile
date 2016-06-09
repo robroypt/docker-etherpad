@@ -10,12 +10,17 @@ RUN cd /opt && \
     bin/installDeps.sh && \
     rm settings.json
 
-RUN npm install \
-    ep_hide_line_numbers \
-    ep_hide_referrer \
-    ep_headings2 \
-    ep_horizontal_line \
-    ep_tables2
+RUN cd /opt/etherpad-lite && 
+    npm install \
+        ep_font_color \
+        ep_font_family \
+        ep_font_size \
+        ep_headings2 \
+        ep_hide_line_numbers \
+        ep_hide_referrer \
+        ep_horizontal_line \
+        ep_page_ruler \
+        ep_tables2
     
 COPY entrypoint.sh /entrypoint.sh
 VOLUME /opt/etherpad-lite/var
