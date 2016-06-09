@@ -14,7 +14,7 @@ RUN npm install \
     ep_hide_line_numbers \
     ep_hide_referrer \
     ep_headings2 \
-    ep_horizontal_linev \
+    ep_horizontal_line \
     ep_tables2
     
 COPY entrypoint.sh /entrypoint.sh
